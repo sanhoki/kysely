@@ -1,0 +1,58 @@
+body { 
+  background-color: snow;
+  padding: 1rem;
+}
+
+#kysymys {
+  background-color: palegreen;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Comic Sans MS";
+  font-size: 1.5rem;
+}
+
+.vaihtoehto {
+  background-color: lightblue;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-family: "Comic Sans MS";
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.vaarin {
+  background-color: red;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-family: "Comic Sans MS";
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.oikein {
+  background-color: green;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-family: "Comic Sans MS";
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.vaihtoehto:hover {
+  background-color: lightskyblue;
+}
+
+#seuraava {
+  padding: 1rem;
+  margin 1rem;
+  font-family: "Comic Sans MS";
+  font-size: 0.8rem;
+}
+
+#nappi {
+  text-align: center;
+}
