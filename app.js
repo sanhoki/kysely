@@ -3600,8 +3600,6 @@
     },
     FilteredElementList__iterable_closure0: function FilteredElementList__iterable_closure0() {
     },
-    _JSRandom: function _JSRandom() {
-    },
     SvgElement: function SvgElement() {
     },
     main() {
@@ -5121,6 +5119,9 @@
   A.ImageElement.prototype = {
     set$src(receiver, value) {
       receiver.src = value;
+    },
+    set$width(receiver, value) {
+      receiver.width = value;
     }
   };
   A.MouseEvent.prototype = {$isMouseEvent: 1};
@@ -5267,11 +5268,6 @@
     },
     $signature: 16
   };
-  A._JSRandom.prototype = {
-    nextDouble$0() {
-      return Math.random();
-    }
-  };
   A.SvgElement.prototype = {
     get$children(receiver) {
       return new A.FilteredElementList(receiver, new A._ChildNodeListLazy(receiver));
@@ -5282,7 +5278,7 @@
   };
   A.main_closure.prototype = {
     call$1(e) {
-      var t1, t2, t3, rnd, t4, lisateksti, ranking, _this = this,
+      var t1, t2, t3, t4, lisateksti, ranking, t5, _this = this,
         _s11_ = "#vastaukset";
       type$.MouseEvent._as(e);
       t1 = _this._box_0;
@@ -5296,13 +5292,6 @@
         t3 = t2.querySelector(_s11_);
         if (t3 != null)
           J.get$children$x(t3).clear$0(0);
-        rnd = B.C__JSRandom.nextDouble$0();
-        t3 = t2.createElement("img");
-        t3.toString;
-        B.ImageElement_methods.set$src(t3, "https://cataas.com/cat?type=small&t=" + A.S(rnd));
-        t4 = t2.querySelector(_s11_);
-        if (t4 != null)
-          J.get$children$x(t4).add$1(0, t3);
         t3 = $.globaali;
         t4 = A._asNum(_this.kysymys_maara);
         lisateksti = "";
@@ -5319,6 +5308,13 @@
           lisateksti = "Kaikki oikein!";
         } else
           ranking = "";
+        t3 = t2.createElement("img");
+        t3.toString;
+        B.ImageElement_methods.set$src(t3, "/kuvat/ranking/" + ranking + ".png");
+        B.ImageElement_methods.set$width(t3, 400);
+        t5 = t2.querySelector(_s11_);
+        if (t5 != null)
+          J.get$children$x(t5).add$1(0, t3);
         t2 = t2.querySelector("#kysymys");
         if (t2 != null)
           J.set$text$x(t2, "P\xe4\xe4sit Loppuun! Oikeita vastauksia: " + $.globaali + "/" + t4 + " " + lisateksti + " Olet maantiedon " + ranking + ".");
@@ -5369,7 +5365,7 @@
       _inherit = hunkHelpers.inherit,
       _inheritMany = hunkHelpers.inheritMany;
     _inherit(A.Object, null);
-    _inheritMany(A.Object, [A.JS_CONST, J.Interceptor, J.ArrayIterator, A.Error, A.Iterable, A.ListIterator, A.MappedIterator, A.WhereIterator, A.TypeErrorDecoder, A.NullThrownFromJavaScriptException, A.ExceptionAndStackTrace, A._StackTrace, A.Closure, A.LinkedHashMapKeyIterator, A.Rti, A._FunctionParameters, A._Type, A._TimerImpl, A._AsyncAwaitCompleter, A.AsyncError, A._FutureListener, A._Future, A._AsyncCallbackEntry, A.Stream, A._StreamIterator, A._Zone, A.ListBase, A.MapBase, A.Codec, A.Converter, A.StackOverflowError, A._Exception, A.FormatException, A.Null, A._StringStackTrace, A.StringBuffer, A.EventStreamProvider, A._EventStreamSubscription, A.ImmutableListMixin, A.FixedSizeListIterator, A._JSRandom]);
+    _inheritMany(A.Object, [A.JS_CONST, J.Interceptor, J.ArrayIterator, A.Error, A.Iterable, A.ListIterator, A.MappedIterator, A.WhereIterator, A.TypeErrorDecoder, A.NullThrownFromJavaScriptException, A.ExceptionAndStackTrace, A._StackTrace, A.Closure, A.LinkedHashMapKeyIterator, A.Rti, A._FunctionParameters, A._Type, A._TimerImpl, A._AsyncAwaitCompleter, A.AsyncError, A._FutureListener, A._Future, A._AsyncCallbackEntry, A.Stream, A._StreamIterator, A._Zone, A.ListBase, A.MapBase, A.Codec, A.Converter, A.StackOverflowError, A._Exception, A.FormatException, A.Null, A._StringStackTrace, A.StringBuffer, A.EventStreamProvider, A._EventStreamSubscription, A.ImmutableListMixin, A.FixedSizeListIterator]);
     _inheritMany(J.Interceptor, [J.JSBool, J.JSNull, J.JavaScriptObject, J.JavaScriptBigInt, J.JavaScriptSymbol, J.JSNumber, J.JSString]);
     _inheritMany(J.JavaScriptObject, [J.LegacyJavaScriptObject, J.JSArray, A.EventTarget, A.DomException, A.Event, A._HtmlCollection_JavaScriptObject_ListMixin, A._NodeList_JavaScriptObject_ListMixin]);
     _inheritMany(J.LegacyJavaScriptObject, [J.PlainJavaScriptObject, J.UnknownJavaScriptObject, J.JavaScriptFunction]);
@@ -5612,7 +5608,6 @@
     B.C_JS_CONST3 = function(hooks) { return hooks; }
 ;
     B.C_JsonCodec = new A.JsonCodec();
-    B.C__JSRandom = new A._JSRandom();
     B.C__RootZone = new A._RootZone();
     B.C__StringStackTrace = new A._StringStackTrace();
     B.JsonDecoder_null = new A.JsonDecoder(null);
