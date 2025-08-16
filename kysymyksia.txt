@@ -1,0 +1,17 @@
+Mikä on Suomen väkiluku?;5,6 Miljoonaa;7.1 Miljoonaa;4.2 Miljoonaa;1;
+Mikä on Ruotsin pääkaupunki?;Göteborg;Linköping;Tukholma;Malmö;3;
+Mikä on Suomen suurin järvi?;Päijänne;Inarijärvi;Saimaa;3;
+Mikä on asukasluvultaan suurin Yhdysvaltain osavaltio?;Florida;New York;California;Texas;3;
+Minkä valtion lippu?;Ruotsi;Tanska;Suomi;Norja;4;lippu2.png
+Mikä on Saksan väkiluku?;83 Miljoonaa;62 Miljoonaa;105 Miljoonaa;1;
+Millä valtiolla on vanhin käytössä oleva kansallislippu?;Ranska;Tanska;Kreikka;Italia;2;
+Mikä on asukasluvultaan maailman kolmanneksi suurin valtio?;Indonesia;Yhdysvallat;Kiina;Nigeria;2;
+Mikä on kuumin koskaan maapallolla mitattu lämpötila ja missä?;51,2 °C, Inferno Valley;56,7 °C, Death Valley;62,3 °C, Skull Valley;2;
+Mikä on Afrikan korkein vuori?;Mount Everest;Mount Kenya;Mount Kilimanjaro;K2;3;
+Minkä valtion lippu?;Kiina;Vietnam;Thaimaa;Pohjois-Korea;2;lippu3.png
+Mikä näistä meristä ei ole oikea?;Punainenmeri;Mustameri;Vihreämeri;Keltainenmeri;3;
+Mikä on Perun pääkaupunki?;Lima;Räkä;Mönjä;Lieju;Tahma;1;
+Mikä ase esiintyy Mosambikin (valtio eteläisessä Afrikassa) lipussa?;Miekka;Pistooli;AK-47 Rynnäkkökivääri;Jousipyssy;RPG-7 Sinko;3;
+Minä vuonna maailman nuorin itsenäinen valtio Etelä-Sudan itsenäistyi?;1991;2001;2011;2021;3;
+Mikä on Kanadan pääkaupunki?;Montreal;Toronto;Vancouver;Ottawa;Edmonton;Calgary;Winnipeg;4;
+Mikä on tämän (punaisella värjätyn) Etelä-Amerikassa sijaitsevan pitkän ja kapean valtion nimi?;Uruguay;Paraguay;Argentiina;Chile;Bolivia;4;pitka_ja_kapea.png

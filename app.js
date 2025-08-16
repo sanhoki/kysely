@@ -3498,6 +3498,11 @@
     StringBuffer: function StringBuffer(t0) {
       this._contents = t0;
     },
+    ImageElement_ImageElement() {
+      var t1 = document.createElement("img");
+      t1.toString;
+      return t1;
+    },
     _EventStreamSubscription$(_target, _eventType, onData, _useCapture, $T) {
       var t1 = A._wrapZone(new A._EventStreamSubscription_closure(onData), type$.Event);
       if (t1 != null)
@@ -3633,18 +3638,26 @@
       return A._asyncStartSync($async$main, $async$completer);
     },
     asetaKysymys(kysymys) {
-      var i,
-        _s11_ = "vaihtoehdot",
+      var i, kuva,
+        _s11_ = "#vastaukset",
+        _s11_0 = "vaihtoehdot",
         t1 = document,
         t2 = t1.querySelector("#kysymys");
       if (t2 != null)
         J.set$text$x(t2, A._asStringQ(J.$index$asx(kysymys, "teksti")));
-      t1 = t1.querySelector("#vastaukset");
-      if (t1 != null)
-        J.get$children$x(t1).clear$0(0);
+      t2 = t1.querySelector(_s11_);
+      if (t2 != null)
+        J.get$children$x(t2).clear$0(0);
       $.vastattu = false;
-      for (t1 = J.getInterceptor$asx(kysymys), i = 0; i < A._asNum(J.get$length$asx(t1.$index(kysymys, _s11_))); ++i)
-        A.lisaaVastausvaihtoehto(J.$index$asx(t1.$index(kysymys, _s11_), i));
+      for (t2 = J.getInterceptor$asx(kysymys), i = 0; i < A._asNum(J.get$length$asx(t2.$index(kysymys, _s11_0))); ++i)
+        A.lisaaVastausvaihtoehto(J.$index$asx(t2.$index(kysymys, _s11_0), i));
+      if (!J.$eq$(t2.$index(kysymys, "kuva"), "")) {
+        kuva = A.ImageElement_ImageElement();
+        B.ImageElement_methods.set$src(kuva, "kuvat/kysymys_kuvat/" + A.S(t2.$index(kysymys, "kuva")));
+        t1 = t1.querySelector(_s11_);
+        if (t1 != null)
+          J.get$children$x(t1).add$1(0, kuva);
+      }
     },
     lisaaVastausvaihtoehto(vaihtoehto) {
       var t2,
@@ -5278,7 +5291,7 @@
   };
   A.main_closure.prototype = {
     call$1(e) {
-      var t1, t2, t3, t4, lisateksti, ranking, t5, _this = this,
+      var t1, t2, t3, t4, lisateksti, ranking, kuva, _this = this,
         _s11_ = "#vastaukset";
       type$.MouseEvent._as(e);
       t1 = _this._box_0;
@@ -5308,13 +5321,12 @@
           lisateksti = "Kaikki oikein!";
         } else
           ranking = "";
-        t3 = t2.createElement("img");
-        t3.toString;
-        B.ImageElement_methods.set$src(t3, "kuvat/ranking/" + ranking + ".png");
-        B.ImageElement_methods.set$width(t3, 400);
-        t5 = t2.querySelector(_s11_);
-        if (t5 != null)
-          J.get$children$x(t5).add$1(0, t3);
+        kuva = A.ImageElement_ImageElement();
+        B.ImageElement_methods.set$src(kuva, "kuvat/ranking/" + ranking + ".png");
+        B.ImageElement_methods.set$width(kuva, 400);
+        t3 = t2.querySelector(_s11_);
+        if (t3 != null)
+          J.get$children$x(t3).add$1(0, kuva);
         t2 = t2.querySelector("#kysymys");
         if (t2 != null)
           J.set$text$x(t2, "P\xe4\xe4sit Loppuun! Oikeita vastauksia: " + $.globaali + "/" + t4 + " " + lisateksti + " Olet maantiedon " + ranking + ".");
