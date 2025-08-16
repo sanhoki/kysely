@@ -5310,7 +5310,7 @@
           ranking = "";
         t3 = t2.createElement("img");
         t3.toString;
-        B.ImageElement_methods.set$src(t3, "kuvat/lippu.png");
+        B.ImageElement_methods.set$src(t3, "kuvat/ranking/" + ranking + ".png");
         B.ImageElement_methods.set$width(t3, 400);
         t5 = t2.querySelector(_s11_);
         if (t5 != null)
