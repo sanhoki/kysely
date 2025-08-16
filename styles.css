@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .vaihtoehto {
@@ -61,4 +62,5 @@ body {
 
 #nappi {
   text-align: center;
+
 }
