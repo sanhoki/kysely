@@ -12,6 +12,12 @@ body {
   font-size: 1.5rem;
 }
 
+#runko {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .vaihtoehto {
   background-color: lightblue;
   padding: 1rem;
