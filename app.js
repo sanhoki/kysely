@@ -3946,7 +3946,11 @@
               kysymykset = $async$temp1.$index$asx($async$temp2.decode$2$reviver(0, $async$result, null), "kysymykset");
               kysymys_maara = J.get$length$asx(kysymykset);
               t1.indeksi = 0;
-              t2 = document.querySelector("#seuraava");
+              t2 = document;
+              t3 = t2.querySelector("#seuraava");
+              if (t3 != null)
+                J.set$text$x(t3, "Seuraava kysymys 0/" + A.S(kysymys_maara));
+              t2 = t2.querySelector("#seuraava");
               if (t2 != null) {
                 t2 = J.get$onClick$x(t2);
                 t3 = t2.$ti;
