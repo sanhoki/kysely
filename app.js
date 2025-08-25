@@ -3963,7 +3963,7 @@
       return A._asyncStartSync($async$main, $async$completer);
     },
     asetaKysymys(kysymys) {
-      var i, kuva,
+      var oikeaIndeksi, i, kuva,
         _s11_ = "#vastaukset",
         _s11_0 = "vaihtoehdot",
         t1 = document,
@@ -3974,8 +3974,11 @@
       if (t2 != null)
         J.get$children$x(t2).clear$0(0);
       $.vastattu = false;
-      for (t2 = J.getInterceptor$asx(kysymys), i = 0; i < A._asNum(J.get$length$asx(t2.$index(kysymys, _s11_0))); ++i)
-        A.lisaaVastausvaihtoehto(J.$index$asx(t2.$index(kysymys, _s11_0), i));
+      for (t2 = J.getInterceptor$asx(kysymys), oikeaIndeksi = 0, i = 0; i < A._asNum(J.get$length$asx(t2.$index(kysymys, _s11_0))); ++i)
+        if (A._asBool(J.$index$asx(J.$index$asx(t2.$index(kysymys, _s11_0), i), "oikein")))
+          oikeaIndeksi = i;
+      for (i = 0; i < A._asNum(J.get$length$asx(t2.$index(kysymys, _s11_0))); ++i)
+        A.lisaaVastausvaihtoehto(J.$index$asx(t2.$index(kysymys, _s11_0), i), oikeaIndeksi);
       if (!J.$eq$(t2.$index(kysymys, "kuva"), "")) {
         kuva = A.ImageElement_ImageElement();
         B.ImageElement_methods.set$src(kuva, "kuvat/kysymys_kuvat/" + A.S(t2.$index(kysymys, "kuva")));
@@ -3985,14 +3988,14 @@
           J.get$children$x(t1).add$1(0, kuva);
       }
     },
-    lisaaVastausvaihtoehto(vaihtoehto) {
+    lisaaVastausvaihtoehto(vaihtoehto, oikeaIndeksi) {
       var t2,
         t1 = document,
         elementti = t1.createElement("div");
       elementti.className = "vaihtoehto";
       B.DivElement_methods.set$text(elementti, A._asStringQ(J.$index$asx(vaihtoehto, "teksti")));
       t2 = type$._ElementEventStreamImpl_MouseEvent;
-      A._EventStreamSubscription$(elementti, "click", t2._eval$1("~(1)?")._as(new A.lisaaVastausvaihtoehto_closure(vaihtoehto, elementti)), false, t2._precomputed1);
+      A._EventStreamSubscription$(elementti, "click", t2._eval$1("~(1)?")._as(new A.lisaaVastausvaihtoehto_closure(vaihtoehto, elementti, oikeaIndeksi)), false, t2._precomputed1);
       t1 = t1.querySelector("#vastaukset");
       if (t1 != null)
         J.get$children$x(t1).add$1(0, elementti);
@@ -4002,9 +4005,10 @@
       this.kysymykset = t1;
       this.kysymys_maara = t2;
     },
-    lisaaVastausvaihtoehto_closure: function lisaaVastausvaihtoehto_closure(t0, t1) {
+    lisaaVastausvaihtoehto_closure: function lisaaVastausvaihtoehto_closure(t0, t1, t2) {
       this.vaihtoehto = t0;
       this.elementti = t1;
+      this.oikeaIndeksi = t2;
     },
     throwLateFieldADI(fieldName) {
       throw A.initializeExceptionWrapper(new A.LateError("Field '" + fieldName + "' has been assigned during initialization."), new Error());
@@ -6719,17 +6723,20 @@
   };
   A.lisaaVastausvaihtoehto_closure.prototype = {
     call$1(e) {
-      var t1;
+      var t1, _s6_ = "oikein";
       type$.MouseEvent._as(e);
       if (!$.vastattu) {
         t1 = this.elementti;
-        if (A._asBool(J.$index$asx(this.vaihtoehto, "oikein"))) {
+        if (A._asBool(J.$index$asx(this.vaihtoehto, _s6_))) {
           B.DivElement_methods.set$text(t1, "Oikein!");
-          t1.className = "oikein";
+          t1.className = _s6_;
           $.globaali = $.globaali + 1;
         } else {
           B.DivElement_methods.set$text(t1, "V\xe4\xe4rin!");
           t1.className = "vaarin";
+          t1 = document.querySelector("#vastaukset");
+          if (t1 != null)
+            J.get$children$x(t1).$index(0, this.oikeaIndeksi).className = _s6_;
         }
         $.vastattu = true;
       }
